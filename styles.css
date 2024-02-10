@@ -46,10 +46,52 @@ input[type="submit"]:hover {
   background-color: #611c3f;
 }
 
-.student {
-  background-color: #ddd;
-  border-radius: 5px;
-  padding: 10px 20px;
-  line-height: 15px;
-  margin-top: 20px;
+.header {
+  display: flex;
+  align-items: center;
 }
+
+.header img {
+  margin-right: 10px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.newTodoItem {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+}
+
+.newTodoItem h1 {
+  margin: 0;
+  flex: 1;
+  word-wrap: break-word; /* or overflow-wrap: break-word; */
+}
+
+.prioritySelect {
+  margin-left: auto; /* Pushes the dropdown to the right */
+  margin-right: 10px;
+  width: 120px; /* Set the width to your preferred value */
+}
+
+.removeButton {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.removeButton:hover {
+  background-color: #c82333;
+}
+
+

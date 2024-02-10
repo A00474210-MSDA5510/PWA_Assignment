@@ -6,7 +6,7 @@ var db = new Dexie("studentsDatabase");
  * indexes on the properties "name" and "city".
  */
 db.version(1).stores({
-  students: "id, name, city",
+  students: "id, name, prio",
 });
 
 /**
@@ -26,9 +26,9 @@ function getAllStudentsFromDB() {
 /**
  * Adds a new student record to the database.
  */
-function addStudentToDB(name, id) {
+function addStudentToDB(name, id, prio) {
   db.students
-    .put({ name, id})
+    .put({ name, id, prio})
     .then(() => true)
     .catch((err) => {
       alert("Ouch... " + err);
@@ -44,6 +44,21 @@ function removeStudentFromDB(studentId) {
       .then(() => console.log(`Student with ID ${studentId} removed from the database.`))
       .catch((err) => {
         console.error("Error removing student from the database:", err);
+      });
+  } else {
+    console.error("Database or students table not found.");
+  }
+}
+
+function updatePriorityInDB(studentId, newPriority) {
+  if (db && db.students) {
+    db.students
+      .where("id")
+      .equals(studentId)
+      .modify({ prio: newPriority })
+      .then(() => console.log(`Priority of student with ID ${studentId} updated to ${newPriority}.`))
+      .catch((err) => {
+        console.error("Error updating student priority:", err);
       });
   } else {
     console.error("Database or students table not found.");

@@ -9,26 +9,27 @@
     <title>Intro to IndexedDB</title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="manifest" href="/manifest.json">
+
 </head>
 
 <body>
     <div class="header">
-        <img src="./smu-icon-96x96.png" width="75px" />
-        <h1>Students List</h1>
+        <img src="./ms-to-do-1031155205.png" width="75px" />
+        <h1>To Do List</h1>
     </div>
 
     <hr />
 
 
     <form>
-        <label for="name">Student Name</label>
-        <input type="text" id="sname" name="sname" placeholder="Student name...">
-        <input type="submit" value="Add Student">
+        <label for="name">Todo List Item</label>
+        <input type="text" id="actionItem" name="actionItem" placeholder="What do you want to do...">
+        <input type="submit" value="Add Todo">
     </form>
 
     <hr />
 
-    <div id="students"></div>
+    <div id="todoLists"></div>
 </body>
 
 <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
